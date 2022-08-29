@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./main.css" />
 
     <style>
         p, h2 {
@@ -14,13 +14,13 @@
 </head>
 
 <body>
-    <header class="bg-gray-400 p-10">
-        <h1 class="text-3xl font-bold underline">
+    <header>
+        <h1>
             A CMS Page
         </h1>
     </header>
 
-    <main class="p-10">
+    <main>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
             aliqua. Eros in cursus turpis massa tincidunt dui ut ornare lectus. Libero justo laoreet sit amet cursus sit. Suscipit
@@ -29,7 +29,7 @@
 
         <!-- app mounted here -->
         <div id="app">
-            <h2 class="text-2xl p-6 border-2 text-center">My Production App!</h2>
+            <h2>My Production App!</h2>
         </div>
         
         <!-- bundle loaded here -->
@@ -41,6 +41,8 @@
             adipiscing diam donec adipiscing tristique.
         </p>
     </main>
+
+    <script src="./main.js"></script>
 </body>
 
 </html>

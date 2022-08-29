@@ -14,14 +14,11 @@ export default defineConfig({
   }, 
   server: {
     proxy: {
-      // Route the root path of our dev server to the deployed page deployed page.
       '^/$': {
         target: "https://vite-proxy-demo.netlify.app",
         changeOrigin: true,
-        rewrite: () => "/"
+        rewrite: () => "/some-page/"
       }, 
-
-      
     }
   }
 });
