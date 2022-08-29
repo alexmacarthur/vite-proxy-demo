@@ -1,0 +1,29 @@
+{
+  "name": "bare-bones",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexmacarthur/bare-bones-html.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexmacarthur/bare-bones-html/issues"
+  },
+  "homepage": "https://github.com/alexmacarthur/bare-bones-html#readme",
+  "dependencies": {
+    "preact": "^10.10.6",
+    "vite": "^3.0.9"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.3.0"
+  }
+}
