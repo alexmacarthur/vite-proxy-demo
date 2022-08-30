@@ -4,16 +4,13 @@ import preact from '@preact/preset-vite';
 
 const HtmlRewriter = () => ({
   name: 'html-rewriter',
-  configureServer(server) {
-    server.middlewares.use((req, res, next) => {
-      if(req.url === "/") {
 
-        console.log("REWRITING");
-        return new Response(res.body, res);
-      }
-
-      return res;
-    })
+  // https://vitejs.dev/guide/api-plugin.html#vite-specific-hooks
+  transformIndexHtml(html) {
+    return html.replace(
+      /<title>(.*?)<\/title>/,
+      `<title>Replaced Title!</title>`
+    )
   }
 })
 
@@ -26,7 +23,7 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js`,
       formats: ['es', 'umd'],
     },
-  }, 
+  },
   server: {
 
     proxy: {
@@ -40,7 +37,7 @@ export default defineConfig({
       //   target: "https://vite-proxy-demo.netlify.app",
       //   changeOrigin: true,
       //   rewrite: () => "/some-page/"
-      // }, 
+      // },
     }
   }
 });
