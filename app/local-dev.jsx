@@ -1,4 +1,5 @@
-import { render } from 'preact';
-import App from './app';
+const app = document.getElementById('app');
 
-render(<App />, document.getElementById('app'));
+app.innerHTML = "<h2>My Development App!</h2>";
+
+console.log("DEV BUNDLE LOADING")
