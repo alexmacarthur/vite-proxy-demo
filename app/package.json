@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/alexmacarthur/bare-bones-html#readme",
   "dependencies": {
+    "harmon": "^1.4.4",
+    "node-http-proxy-json": "^0.1.9",
     "preact": "^10.10.6",
     "vite": "^3.0.9"
   },
