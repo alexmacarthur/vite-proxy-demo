@@ -61,7 +61,7 @@ export default function modifyResponse(res, proxyRes, callback) {
  * handle compressed
  */
 function handleCompressed(res, _write, _end, unzip, zip, callback) {
-  console.log("compressed");
+  // console.log("compressed");
 
   // The rewrite response method is replaced by unzip stream.
   res.write = data => { unzip.write(data) };
@@ -112,7 +112,7 @@ function handleCompressed(res, _write, _end, unzip, zip, callback) {
  * handle Uncompressed
  */
 function handleUncompressed(res, _write, _end, callback) {
-  console.log("uncompressed");
+  // console.log("uncompressed");
   let buffer = new BufferHelper();
   // Rewrite response method and get the content.
   res.write = data => buffer.concat(data);
