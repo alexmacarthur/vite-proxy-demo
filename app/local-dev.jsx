@@ -38,16 +38,14 @@
 //     document.body.dispatchEvent(event);
 // }
 
-if (import.meta.hot) {
-    import.meta.hot.accept(() => {})
-}
+// if (import.meta.hot) {
+//     import.meta.hot.accept(() => {})
+// }
 
-import func from "./main";
+// import func from "./main";
 
 const app = document.getElementById('app');
 
-app.innerHTML = "<h2>My Development Appnofffff.</h2>";
+app.innerHTML = "<h2>My Development App</h2>";
 
-console.log("DEV BUNDLE LOADINGlol???f?!!!?")
-
-func();
+// func();

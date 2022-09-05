@@ -29,7 +29,7 @@ const HtmlRewriter = () => ({
 })
 
 export default defineConfig({
-  plugins: [HtmlRewriter()],
+  // plugins: [HtmlRewriter()],
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.js'),
@@ -40,10 +40,6 @@ export default defineConfig({
   },
   server: {
     proxy: {
-
-
-
-
       // '*proxy-path*': {
       //   target: "https://macarthur.me",
       //   changeOrigin: true,
@@ -53,25 +49,23 @@ export default defineConfig({
       //   },
       // },
 
-      // '^/$': {
-      //   target: "https://vite-proxy-demo.netlify.app",
-      //   changeOrigin: true,
-      //   rewrite: () => {
-      //     return "/some-page/";
-      //   },
-      //   configure: (proxy, options) => {
-      //     proxy.on('proxyRes', function (proxyRes, req, res) {
+      '^\.\/*': {
+        target: "https://vite-proxy-demo.netlify.app",
+        changeOrigin: true,
+        rewrite: (path) => {
 
-      //       modifyResponse(res, proxyRes, (body) => {
-      //         return body.replace(
-      //           /(https:\/\/.*?\.cloudfront\.net.*?\.[a-z]+)/g,
-      //           `http://localhost:5173/proxy-path/$1`
-      //         )
-      //       });
+          console.log("match");
+          console.log(path);
 
-      //     });
-      //   }
-      // },
-    }
+          return path;
+        }
+      },
+
+      '^/$': {
+        target: "https://vite-proxy-demo.netlify.app",
+        changeOrigin: true,
+        rewrite: () => "/some-page/"
+       }
+    },
   }
 });
