@@ -49,7 +49,7 @@ export default defineConfig({
       //   },
       // },
 
-      '^\.\/*': {
+      '/static': {
         target: "https://vite-proxy-demo.netlify.app",
         changeOrigin: true,
         rewrite: (path) => {
