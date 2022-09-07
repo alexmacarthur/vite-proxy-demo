@@ -1,40 +1,29 @@
 * {
-    font-family: Inter var,
-        ui-sans-serif,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        Segoe UI,
-        Roboto,
-        Helvetica Neue,
-        Arial,
-        Noto Sans,
-        sans-serif,
-        Apple Color Emoji,
-        Segoe UI Emoji,
-        Segoe UI Symbol,
-        Noto Color Emoji;
+  font-family: Inter var, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
 }
 
 body {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 header {
-    background: lightgray;
-    padding: 25px;
+  background: lightgray;
+  padding: 25px;
 }
 
 h1 {
-    margin: 0;
+  margin: 0;
 }
 
 main {
-    padding: 15px;
+  padding: 15px;
 }
 
 #app {
-    border: 2px solid lightgray;
-    text-align: center;
+  border: 2px solid lightgray;
+  text-align: center;
 }
