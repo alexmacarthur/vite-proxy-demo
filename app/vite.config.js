@@ -6,50 +6,29 @@ import preact from "@preact/preset-vite";
 /**
  * Approach #2
  */
+const HtmlRewriter = () => ({
+  name: 'html-rewriter',
 
-// const HtmlRewriter = () => ({
-//   name: 'html-rewriter',
+  async transformIndexHtml(_html) {
+    const response = await fetch("https://vite-proxy-demo.netlify.app/some-page/");
+    const remoteHtml = await response.text();
 
-//   // https://vitejs.dev/guide/api-plugin.html#vite-specific-hooks
-//   async transformIndexHtml(_html) {
-//     const response = await fetch("https://vite-proxy-demo.netlify.app/some-page/");
-//     const remoteHtml = await response.text();
+    console.log(remoteHtml);
 
-//     return remoteHtml.replace(
-//       /(https:\/\/(.*?)cloudfront\.net(.*?)production-bundle\.js)/,
-//       `./local-dev.js`
-//     )
-//   },
-// });
+    return remoteHtml.replace(
+      /(https:\/\/(.*?)cloudfront\.net(.*?)production-bundle\.js)/,
+      `./local-dev.jsx`
+    )
+  },
+});
 
 export default defineConfig({
-  plugins: [preact() /* HtmlRewriter() */],
+  plugins: [preact(), HtmlRewriter()],
   build: {
     lib: {
       entry: resolve(__dirname, "app.jsx"),
       name: "MyApp",
       fileName: () => "production-bundle.js",
     },
-  },
-  server: {
-    /**
-     * Approach #1
-     */
-    // proxy: {
-    //   '/static/production-bundle.js': {
-    //     target: "http://localhost:5173",
-    //     changeOrigin: true,
-    //     rewrite: () => "./local-dev.js"
-    //   },
-    //   '/static': {
-    //     target: "https://vite-proxy-demo.netlify.app",
-    //     changeOrigin: true
-    //   },
-    //   '^/$': {
-    //     target: "https://vite-proxy-demo.netlify.app",
-    //     changeOrigin: true,
-    //     rewrite: () => "/some-page/"
-    //   },
-    // },
-  },
+  }
 });
